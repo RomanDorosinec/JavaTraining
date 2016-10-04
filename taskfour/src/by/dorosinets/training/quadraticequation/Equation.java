@@ -27,7 +27,7 @@ public class Equation {
      * Calculates equation roots
      * @return a string with equation solution - no roots, one root or two roots
      */
-    public String rootEquation () {
+    public String rootEquation() {
         // Handles the case when coefficient A is zero
         if (numberA == 0.0) {
             return "This is not a quadratice Equation";

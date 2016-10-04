@@ -5,6 +5,11 @@ package by.dorosinets.training.quadraticequation;
  * Receives and processes the command line arguments
  */
 public class Runner {
+    /**
+     * It receives and processes the command line arguments
+     * Handle exceptions
+     * @param args params that take from the command line
+     */
     public static void main(String[] args) {
         try {
             // Check if all arguments have correct number of digits after
@@ -30,7 +35,7 @@ public class Runner {
     /**
      * Check our arguments on the amount of numbers after the decimal point
      * @param args params that take from the command line
-     * @return
+     * @return true if arguments are valid, false otherwise
      */
     public static boolean validateArgs(String[] args) {
         for (int i = 0; i < args.length; i++) {
