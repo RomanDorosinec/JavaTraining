@@ -13,20 +13,11 @@ public class Equation {
     public double getNumberA() {
         return numberA;
     }
-    public void setNumberA(double numberA) {
-        this.numberA = numberA;
-    }
     public double getNumberB() {
         return numberB;
     }
-    public void setNumberB(double numberB) {
-        this.numberB = numberB;
-    }
     public double getNumberC() {
         return numberC;
-    }
-    public void setNumberC(double numberC) {
-        this.numberC = numberC;
     }
     public double rootEquation () {
         double discriminant;
