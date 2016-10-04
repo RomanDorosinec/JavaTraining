@@ -13,11 +13,15 @@ public class Equation {
 
     /**
      * Creates new equation
+     * Tests for values NaN
      * @param a coefficient near x^2
      * @param b coefficient near x
      * @param c free coefficient
      */
     public Equation(double a, double b, double c) {
+        if (Double.isNaN(a) || Double.isNaN(b) || Double.isNaN(c)) {
+            throw new ArithmeticException("Coefficients should not be NaN");
+        }
         this.numberA = a;
         this.numberB = b;
         this.numberC = c;
