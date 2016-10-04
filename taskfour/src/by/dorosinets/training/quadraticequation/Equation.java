@@ -1,6 +1,9 @@
 package by.dorosinets.training.quadraticequation;
 import static java.lang.Math.*;
 
+/**
+ * Class for working with equations
+ */
 public class Equation {
     private double numberA;
     private double numberB;
@@ -8,13 +11,22 @@ public class Equation {
     // Amount of numbers after '.'
     public final static int MAX_SIZE = 4;
 
+    /**
+     * Creates new equation
+     * @param a coefficient near x^2
+     * @param b coefficient near x
+     * @param c free coefficient
+     */
     public Equation(double a, double b, double c) {
         this.numberA = a;
         this.numberB = b;
         this.numberC = c;
     }
 
-    // Method count descriminant
+    /**
+     * Calculates equation roots
+     * @return a string with equation solution - no roots, one root or two roots
+     */
     public String rootEquation () {
         // Handles the case when coefficient A is zero
         if (numberA == 0.0) {

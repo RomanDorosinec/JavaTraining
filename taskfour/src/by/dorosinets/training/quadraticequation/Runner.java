@@ -1,5 +1,9 @@
 package by.dorosinets.training.quadraticequation;
-// This class is an entry point in the program
+
+/**
+ * This class is an entry point in the program
+ * Receives and processes the command line arguments
+ */
 public class Runner {
     public static void main(String[] args) {
         try {
@@ -23,7 +27,11 @@ public class Runner {
         }
     }
 
-    // Check our arguments on the amount of numbers after the decimal point
+    /**
+     * Check our arguments on the amount of numbers after the decimal point
+     * @param args params that take from the command line
+     * @return
+     */
     public static boolean validateArgs(String[] args) {
         for (int i = 0; i < args.length; i++) {
             // Looks for '.' in parameter, it means, define if number is integer
