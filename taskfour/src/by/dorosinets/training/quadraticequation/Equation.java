@@ -13,21 +13,25 @@ public class Equation {
         this.numberB = b;
         this.numberC = c;
     }
+
     // Method count descriminant
     public String rootEquation () {
-        double discriminant;
-        double rootOne;
-        double rootTwo;
+        // Handles the case when coefficient A is zero
         if (numberA == 0.0) {
             return "This is not a quadratice Equation";
         }
-        discriminant = numberB*numberB - 4 * numberA * numberC;
-        rootOne = (-numberB + sqrt(discriminant)) / 2 * numberA;
-        rootTwo = (-numberB - sqrt(discriminant)) / 2 * numberA;
-        if (0 != discriminant) {
+        double discriminant = numberB * numberB - 4 * numberA * numberC;
+        // Handles the case when discriminant less then zero
+        if (discriminant < 0) {
+            return "Discriminant is less than zero. The roots of no";
+        }
+        double rootOne = (-numberB + sqrt(discriminant)) / 2 * numberA;
+        double rootTwo = (-numberB - sqrt(discriminant)) / 2 * numberA;
+        // Event processing when the discriminant is zero
+        if (discriminant != 0) {
             return "rootOne: " + rootOne + "\nrootTwo: " + rootTwo;
-        } else
+        } else {
             return "Discriminant is zero. Equation has one root.\nSingle root: " + rootOne;
-
+        }
     }
 }
