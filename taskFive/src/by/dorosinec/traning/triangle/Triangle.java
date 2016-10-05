@@ -18,9 +18,6 @@ public class Triangle {
         if (a == null || b == null || c == null) {
             throw new IllegalArgumentException("Numbers must not be null");
         }
-        if (a.compareTo(b) == 0 && a.compareTo(c) == 0 && b.compareTo(c) == 0) {
-            return "Equilateral triangle";
-        }
         // sort three numbers so that a is the smallest and c is the largest
         BigDecimal temp;
         if (a.compareTo(c) > 0) {
@@ -46,6 +43,9 @@ public class Triangle {
         // if two larger sides are equal or two smaller sides are equal, it's a isosceles triangle
         if (a.compareTo(b) == 0 || b.compareTo(c) == 0) {
             return "Isosceles triangle";
+        }
+        if (a.compareTo(b) == 0 && a.compareTo(c) == 0 && b.compareTo(c) == 0) {
+            return "Equilateral triangle";
         }
         return "Regular triangle";
     }
