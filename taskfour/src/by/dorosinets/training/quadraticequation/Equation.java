@@ -19,8 +19,8 @@ public class Equation {
      * @param c free coefficient
      */
     public Equation(double a, double b, double c) {
-        if (Double.isNaN(a) || Double.isNaN(b) || Double.isNaN(c)) {
-            throw new ArithmeticException("Coefficients should not be NaN");
+        if (isNumberValid(a) || isNumberValid(b) || isNumberValid(c)) {
+            throw new ArithmeticException("Coefficients should not be NaN or infinite");
         }
         this.numberA = a;
         this.numberB = b;
@@ -49,5 +49,14 @@ public class Equation {
         } else {
             return "Discriminant is zero. Equation has one root.\nSingle root: " + rootOne;
         }
+    }
+
+    /**
+     * Tests for values NaN and infinite
+     * @param number
+     * @return
+     */
+    public static boolean isNumberValid(double number) {
+        return Double.isNaN(number) || Double.isInfinite(number);
     }
 }
