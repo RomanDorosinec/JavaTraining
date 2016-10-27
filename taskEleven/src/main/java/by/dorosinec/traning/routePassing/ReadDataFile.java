@@ -11,7 +11,7 @@ public class ReadDataFile {
      * Reading from a file and write date in the arraylist
      *
      * @param file file with coordinates
-     * @return arraylist<string></string> with data from file
+     * @return arraylist with data from file
      * @throws IOException file does not exist
      */
     public ArrayList<String> readAllLines(File file) throws IOException {
