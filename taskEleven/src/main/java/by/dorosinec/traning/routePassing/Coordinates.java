@@ -1,7 +1,7 @@
 package by.dorosinec.traning.routePassing;
 
 /**
- * Created by Dorosinec on 26.10.2016.
+ *
  */
 public class Coordinates {
     private double coordinateX;

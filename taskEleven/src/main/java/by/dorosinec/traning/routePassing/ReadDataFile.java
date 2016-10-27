@@ -8,13 +8,14 @@ import java.util.ArrayList;
  */
 public class ReadDataFile {
     /**
-     * Reading from a file and write date coordinates in the arraylist
+     * Reading from a file and write date in the arraylist
+     *
      * @param file file with coordinates
      * @return arraylist<string></string> with data from file
      * @throws IOException file does not exist
      */
-    public ArrayList<String> getCoordinate(File file) throws IOException {
-        ArrayList<String> dateFile = new ArrayList<String>();
+    public ArrayList<String> readAllLines(File file) throws IOException {
+        ArrayList<String> dateFile = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String nextString;
         while ((nextString = reader.readLine()) != null) {

@@ -3,11 +3,11 @@ package by.dorosinec.traning.routePassing;
 import java.util.ArrayList;
 
 /**
- * Created by Dorosinec on 26.10.2016.
+ *
  */
 public class ParseAndValidate {
     public ArrayList<Coordinates> parseDateFile(ArrayList<String> dataFile) {
-        ArrayList<Coordinates> coordinates = new ArrayList<Coordinates>();
+        ArrayList<Coordinates> coordinates = new ArrayList<>();
         for (String s : dataFile){
             String arrayDataFile[] = s.split(" ", 2);
             coordinates.add(new Coordinates(Double.parseDouble(arrayDataFile[0]),
@@ -15,12 +15,10 @@ public class ParseAndValidate {
         }
         return coordinates;
     }
-    /*public String validateDataFile(ArrayList<String> dataFile) {
-        if (dataFile.size() != 0) {
 
-        } else {
-            return "No data in the file";
+    /*public void validateDataFile(ArrayList<String> dataFile) throws Exception {
+        if (dataFile.size() == 0) {
+            throw new SimpleException("sdf");
         }
-        return "";
     }*/
 }
