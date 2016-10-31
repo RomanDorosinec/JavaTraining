@@ -5,9 +5,14 @@ package by.dorosinec.traning.routePassing;
  */
 public class Bus extends Vehicle {
 
+    public static final double AVERAGE_SPEED = 90;
+    public static final double COST_OF_LITER_FUEL = 2.2;
+    public static final double FUEL_CONSUMPTION = 9;
+    public static final double NUMBER_OF_PEOPLE = 45;
+
     private double averageSpeed;
-    public double costOfLiterFuel;
-    public double fuelConsumption;
+    private double costOfLiterFuel;
+    private double fuelConsumption;
     private double numberOfPeople;
 
     /**
@@ -15,15 +20,16 @@ public class Bus extends Vehicle {
      * fuel consumption and number of people in Bus
      */
     public Bus() {
-        averageSpeed = 80;
-        costOfLiterFuel = 2.5;
-        fuelConsumption = 15;
-        numberOfPeople = 45;
+        averageSpeed = AVERAGE_SPEED;
+        costOfLiterFuel = COST_OF_LITER_FUEL;
+        fuelConsumption = FUEL_CONSUMPTION;
+        numberOfPeople = NUMBER_OF_PEOPLE;
     }
 
     /**
-     *Implements method of interface
+     * Implements method of interface
      * Calculates the time the passage of a predetermined distance a Bus
+     *
      * @param distance the distance between two neighboring points
      * @return returns the travel time between the nearest checkpoint
      */
@@ -35,6 +41,7 @@ public class Bus extends Vehicle {
     /**
      * Implements method of interface
      * Calculates the cost of the passage of a predetermined distance a Bus
+     *
      * @param distance the distance between two neighboring points
      * @return returns the value of the route between the nearest checkpoint
      */

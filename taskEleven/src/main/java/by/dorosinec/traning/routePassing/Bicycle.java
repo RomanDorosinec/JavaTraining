@@ -5,6 +5,9 @@ package by.dorosinec.traning.routePassing;
  */
 public class Bicycle implements CanPassRoute {
 
+    private static final double AVERAGESPEED = 18.5;
+    private static final double COST = 0;
+
     private double averageSpeed;
     private double cost;
 
@@ -12,8 +15,8 @@ public class Bicycle implements CanPassRoute {
      * Class constructor that sets the value of average speed and travel costs
      */
     public Bicycle() {
-        averageSpeed = 18.5;
-        cost = 0;
+        averageSpeed = AVERAGESPEED;
+        cost = COST;
     }
 
     /**

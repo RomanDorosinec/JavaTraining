@@ -25,29 +25,16 @@ public class Distance {
     }
 
     /**
-     * This method gets all the distances between all checkpoints all the way
-     *
-     * @param coordinates list of coordinates checkpoints
-     * @return get a list of all the distances between neighboring points
-     */
-    public ArrayList<Double> getAllDistances(ArrayList<Coordinates> coordinates) {
-        ArrayList<Double> distance = new ArrayList<>();
-        for (int i = 1; i < coordinates.size(); i++) {
-            distance.add(getDistance(coordinates.get(i - 1), coordinates.get(i)));
-        }
-        return distance;
-    }
-
-    /**
      * This method calculate a total distance from the first to the last checkpoint
      *
-     * @param distance a list of all the distances between neighboring points
+     * @param coordinates a list of all the distances between neighboring points
      * @return return the total distance from the first to the last checkpoint
      */
-    public double getTotalDistance(ArrayList<Double> distance) {
+    public double getTotalDistance(ArrayList<Coordinates> coordinates) throws Exception {
+        new Itinerary().validateCoordinates(coordinates);
         double totalDistance = 0;
-        for (Double way : distance) {
-            totalDistance = way;
+        for (int i = 1; i < coordinates.size(); i++) {
+            totalDistance += getDistance(coordinates.get(i - 1), coordinates.get(i));
         }
         return totalDistance;
     }

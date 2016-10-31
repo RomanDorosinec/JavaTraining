@@ -1,8 +1,9 @@
 package by.dorosinec.traning.routePassing;
 
 
+import com.sun.org.apache.regexp.internal.RE;
+
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -19,19 +20,19 @@ public class Main {
      */
     public static void main(String[] args) {
         try {
-            ArrayList<String> dateFile = new ReadDataFile().readAllLines(new File(FILE_NAME));
-            Distance distance = new Distance();
-            ArrayList<Double> distances = distance.getAllDistances(new ParseAndValidate().parseDateFile(dateFile));
+            ReceivingFromFile receivingFromFile = new ReceivingFromFile();
+            Itinerary itinerary = new Itinerary();
+            receivingFromFile.readAllLines(itinerary, new File(FILE_NAME));
             ArrayList<CanPassRoute> transport = new ArrayList<>();
             transport.add(new Pedestrian());
             transport.add(new Bicycle());
             transport.add(new Car());
             transport.add(new Bus());
-            Double totalDistance = distance.getTotalDistance(distances);
+            Double totalDistance = new Distance().getTotalDistance(itinerary.getCoordinates());
             for (Object transports : transport) {
-                    System.out.println(getStatistic((CanPassRoute) transports, totalDistance));
+                System.out.println(getStatistic((CanPassRoute) transports, totalDistance));
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }

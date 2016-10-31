@@ -5,17 +5,21 @@ package by.dorosinec.traning.routePassing;
  */
 public class Car extends Vehicle {
 
-    public double averageSpeed;
-    public double costOfLiterFuel;
-    public double fuelConsumption;
+    public static final double AVERAGE_SPEED = 90;
+    public static final double COST_OF_LITER_FUEL = 2.2;
+    public static final double FUEL_CONSUMPTION = 9;
+
+    private double averageSpeed;
+    private double costOfLiterFuel;
+    private double fuelConsumption;
 
     /**
      * Class constructor that sets the value of average speed, travel costs and fuel consumption
      */
     public Car() {
-        averageSpeed = 90;
-        costOfLiterFuel = 2.3;
-        fuelConsumption = 9;
+        averageSpeed = AVERAGE_SPEED;
+        costOfLiterFuel = COST_OF_LITER_FUEL;
+        fuelConsumption = FUEL_CONSUMPTION;
     }
 
     /**
