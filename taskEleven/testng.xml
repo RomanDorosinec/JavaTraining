@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Transport suite" parallel="false">
+    <test name="Pedestrian test">
+        <classes>
+            <class name="by.dorosinec.traning.routePassing.PedestrianTest"></class>
+        </classes>
+    </test>
+    <test name="Bicycle test">
+        <classes>
+            <class name="by.dorosinec.traning.routePassing.BicycleTest"></class>
+        </classes>
+    </test>
+    <test name="Car test">
+        <classes>
+            <class name="by.dorosinec.traning.routePassing.CarTest"></class>
+        </classes>
+    </test>
+    <test name="Bus test">
+        <classes>
+            <class name="by.dorosinec.traning.routePassing.BusTest"></class>
+        </classes>
+    </test>
+</suite>

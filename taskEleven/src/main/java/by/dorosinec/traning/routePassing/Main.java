@@ -45,7 +45,7 @@ public class Main {
      * @param distance  the distance between two neighboring points
      * @return string with name of type of transport, distance, spend time of travel and cost of travel
      */
-    private static String getStatistic(CanPassRoute transport, double distance) {
+    private static String getStatistic(CanPassRoute transport, double distance) throws Exception {
         return transport.getClass().getSimpleName() + "(distance: " + distance + ") spend " +
                 transport.findTime(distance) + " hours and cost " +
                 transport.findCost(distance) + " USD";

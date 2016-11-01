@@ -1,18 +1,19 @@
 package by.dorosinec.traning.routePassing;
 
-import org.junit.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
-import static org.junit.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
 
 /**
  * Class test ReceivengFromFileTest
  */
 public class ReceivingFromFileTest {
-    @Test
+    @Test(expectedExceptions = Exception.class)
     public void validateDataOfFile() throws Exception {
-        ReceivingFromFile receivingFromFile = new ReceivingFromFile();
-        String line = "";
-        receivingFromFile.validateDataOfFile(line);
+        new ReceivingFromFile().validateDataOfFile(null);
     }
 
 }
