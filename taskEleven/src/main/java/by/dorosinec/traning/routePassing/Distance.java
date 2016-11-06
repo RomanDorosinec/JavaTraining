@@ -13,7 +13,7 @@ public class Distance {
      * @param pointTwo the second point of the way
      * @return return distance between coordinates
      */
-    private double getDistance(Coordinates pointOne, Coordinates pointTwo) {
+    private double getDistance(Coordinates pointOne, Coordinates pointTwo) throws Exception {
         double x1 = pointOne.getCoordinateX();
         double x2 = pointTwo.getCoordinateX();
         double y1 = pointOne.getCoordinateY();

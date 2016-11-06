@@ -28,6 +28,9 @@ public class Pedestrian implements CanPassRoute {
      */
     @Override
     public double findTime(double distance) {
+        if (Double.isNaN(distance) || distance == Double.NEGATIVE_INFINITY || distance == Double.POSITIVE_INFINITY) {
+            throw new ArithmeticException("Invalid time!");
+        }
         return distance / averageSpeed;
     }
 

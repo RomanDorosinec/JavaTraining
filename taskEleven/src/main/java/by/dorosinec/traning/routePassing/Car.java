@@ -31,6 +31,9 @@ public class Car extends Vehicle {
      */
     @Override
     public double findTime(double distance) {
+        if (Double.isNaN(distance) || distance == Double.NEGATIVE_INFINITY || distance == Double.POSITIVE_INFINITY) {
+            throw new ArithmeticException("Invalid time!");
+        }
         return distance / averageSpeed;
     }
 
@@ -43,6 +46,9 @@ public class Car extends Vehicle {
      */
     @Override
     public double findCost(double distance) {
+        if (Double.isNaN(distance) || distance == Double.NEGATIVE_INFINITY || distance == Double.POSITIVE_INFINITY) {
+            throw new ArithmeticException("Invalid cost!");
+        }
         return distance / 100 * fuelConsumption * costOfLiterFuel;
     }
 }

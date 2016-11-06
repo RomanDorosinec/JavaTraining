@@ -74,7 +74,17 @@ public class Itinerary {
                 coordinatesFirst.getCoordinateY() == coordinatesLast.getCoordinateY()) {
             throw new Exception("First and last checkpoint are equals");
         }
+        for (Coordinates coordinate : coordinates) {
+            if (Double.isNaN(coordinate.getCoordinateX()) ||
+                    coordinate.getCoordinateX() == Double.NEGATIVE_INFINITY ||
+                    coordinate.getCoordinateX() == Double.POSITIVE_INFINITY ||
+                    Double.isNaN(coordinate.getCoordinateY()) ||
+                    coordinate.getCoordinateY() == Double.NEGATIVE_INFINITY ||
+                    coordinate.getCoordinateY() == Double.POSITIVE_INFINITY) {
+                throw new ArithmeticException("Invalid coordinates!");
+            }
+        }
     }
 
-    
+
 }

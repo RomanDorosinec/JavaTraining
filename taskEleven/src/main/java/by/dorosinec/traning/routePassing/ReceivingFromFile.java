@@ -17,17 +17,18 @@ public class ReceivingFromFile {
      */
     public Itinerary readAllLines(Itinerary itinerary, File file) throws Exception {
         BufferedReader reader = new BufferedReader(new FileReader(file));
-        String nextString  = reader.readLine();
+        String nextString = reader.readLine();
         validateDataOfFile(nextString);
         while ((nextString) != null) {
             itinerary.setCoordinates(nextString);
-            nextString  = reader.readLine();
+            nextString = reader.readLine();
         }
         return itinerary;
     }
 
     /**
      * Validate contain fail of elements
+     *
      * @param lineFile line of file
      * @throws Exception not input coordinates
      */
