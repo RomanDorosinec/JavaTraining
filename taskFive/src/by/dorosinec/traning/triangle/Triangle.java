@@ -6,47 +6,79 @@ import java.math.BigDecimal;
  * Class for working with side triangle
  */
 public class Triangle {
+
+    private BigDecimal sideA;
+    private BigDecimal sideB;
+    private BigDecimal sideC;
+
     /**
-     * Checks the existence of a triangle
-     * Defines the type of triangle
-     * @param a sides triangle
-     * @param b sides triangle
-     * @param c sides triangle
+     * @param sideA first side of triangle
+     * @param sideB second side of triangle
+     * @param sideC third side of triangle
+     * @throws Exception if side is zero, less then zero or null
+     */
+    public Triangle(BigDecimal sideA, BigDecimal sideB, BigDecimal sideC) throws Exception {
+        validateSides(sideA);
+        validateSides(sideB);
+        validateSides(sideC);
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+    }
+
+    /**
+     * Defines the type of triangle and existence triangle
+     *
      * @return the existence of a triangle and its type
      */
-    public static String getTriangleType(BigDecimal a, BigDecimal b, BigDecimal c) {
-        if (a == null || b == null || c == null) {
-            throw new IllegalArgumentException("Numbers must not be null");
-        }
-        // sort three numbers so that a is the smallest and c is the largest
-        BigDecimal temp;
-        if (a.compareTo(c) > 0) {
-            temp = a;
-            a = c;
-            c = temp;
-        }
-        if (a.compareTo(b) > 0) {
-            temp = a;
-            a = b;
-            b = temp;
-        }
-        if (b.compareTo(c) > 0) {
-            temp = b;
-            b = c;
-            c = temp;
-        }
-        // if sum of the smaller sides is less than the larger side, this is not a triangle
-        if (a.add(b).compareTo(c) <= 0) {
-            return "Not a triangle";
-        }
+    public String getTriangleType() throws Exception {
+        existenceTriangle();
 
-        // if two larger sides are equal or two smaller sides are equal, it's a isosceles triangle
-        if (a.compareTo(b) == 0 || b.compareTo(c) == 0) {
-            return "Isosceles triangle";
-        }
-        if (a.compareTo(b) == 0 && a.compareTo(c) == 0 && b.compareTo(c) == 0) {
+        //if all sides are equals, it's a equilateral triangle
+        if (sideA.compareTo(sideB) == 0 &&
+                sideA.compareTo(sideC) == 0 &&
+                sideB.compareTo(sideC) == 0) {
             return "Equilateral triangle";
         }
+
+        // if two sides are equal, it's a isosceles triangle
+        if (sideA.compareTo(sideB) == 0 ||
+                sideB.compareTo(sideC) == 0 ||
+                sideA.compareTo(sideC) == 0) {
+            return "Isosceles triangle";
+        }
         return "Regular triangle";
+    }
+
+    /**
+     * If the sum of two sides of a triangle is less than a third, the triangle does not exist
+     *
+     * @throws Exception triangle does not exist
+     */
+    private void existenceTriangle() throws Exception {
+        if (sideA.add(sideB).compareTo(sideC) <= 0 ||
+                sideA.add(sideC).compareTo(sideB) <= 0 ||
+                sideC.add(sideB).compareTo(sideA) <= 0) {
+            throw new Exception("Not a triangle");
+        }
+    }
+
+    /**
+     * Check if side is zero, less then zero or null
+     *
+     * @param side one side of the triangle
+     * @throws Exception if have invalid side
+     */
+    private void validateSides(BigDecimal side) throws Exception {
+
+        // Side is null
+        if (side == null) {
+            throw new Exception("Side must not be null");
+        }
+
+        // Side is zero or less then zero
+        if (side.compareTo(BigDecimal.valueOf(0)) <= 0) {
+            throw new Exception("Side must not be less or equals zero");
+        }
     }
 }
