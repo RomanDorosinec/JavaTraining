@@ -17,7 +17,7 @@ public class ParserXml {
      * @return parsed document
      * @throws Exception if error occurred while processing
      */
-    public Document getXml(String xmlFile) throws Exception {
+    public static Document getXml(String xmlFile) throws Exception {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
         File testDataFile = new File(xmlFile);

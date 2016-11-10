@@ -23,16 +23,10 @@ public class TriangleTest {
     private final String SIDE_C = "side_C";
     private final String EXPECTED = "expected";
 
-    ParserXml parserXml;
-
-    @BeforeMethod
-    public void beforeTest() {
-        parserXml = new ParserXml();
-    }
 
     @DataProvider(name = "Valid params of sides")
     public Object[][] validParams() throws Exception {
-        Document document = parserXml.getXml(XML_FILE);
+        Document document = ParserXml.getXml(XML_FILE);
         NodeList nodeListValidParams = document.getElementsByTagName(VALID_PARAMS);
         Object[][] result = new Object[nodeListValidParams.getLength()][];
         int e = nodeListValidParams.getLength();
@@ -55,7 +49,7 @@ public class TriangleTest {
 
     @DataProvider(name = "Invalid params of sides")
     public Object[][] invalidParams() throws Exception {
-        Document document = parserXml.getXml(XML_FILE);
+        Document document = ParserXml.getXml(XML_FILE);
         NodeList nodeListInvalidParams = document.getElementsByTagName(INVALID_PARAMS);
         Object[][] result = new BigDecimal[nodeListInvalidParams.getLength()][];
         for (int i = 0; i < nodeListInvalidParams.getLength(); i++) {
