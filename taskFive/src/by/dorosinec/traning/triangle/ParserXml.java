@@ -23,6 +23,4 @@ public class ParserXml {
         File testDataFile = new File(xmlFile);
         return documentBuilder.parse(testDataFile);
     }
-
-
 }

@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
+
 import java.math.BigDecimal;
 
 import static org.testng.Assert.*;
@@ -22,7 +23,6 @@ public class TriangleTest {
     private final String SIDE_B = "side_B";
     private final String SIDE_C = "side_C";
     private final String EXPECTED = "expected";
-
 
     @DataProvider(name = "Valid params of sides")
     public Object[][] validParams() throws Exception {
