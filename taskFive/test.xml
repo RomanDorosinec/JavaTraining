@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <validTriangle expected="Regular triangle" side_A="9" side_B="10" side_C="11"/>
+    <validTriangle expected="Equilateral triangle" side_A="10" side_B="10" side_C="10"/>
+    <validTriangle expected="Isosceles triangle" side_A="12" side_B="12" side_C="15"/>
+    <validTriangle expected="Isosceles triangle" side_A="12" side_B="15" side_C="12"/>
+    <validTriangle expected="Isosceles triangle" side_A="15" side_B="12" side_C="12"/>
+
+    <invalidParam/>
+    <invalidParam side_C="12"/>
+    <invalidParam side_B="12"/>
+    <invalidParam side_A="12"/>
+    <invalidParam side_B="13" side_C="12"/>
+    <invalidParam side_A="13" side_C="12"/>
+    <invalidParam side_A="13" side_B="12"/>
+    <invalidParam side_A="-10" side_B="13" side_C="12"/>
+    <invalidParam side_A="10" side_B="-13" side_C="12"/>
+    <invalidParam side_A="10" side_B="13" side_C="-12"/>
+    <invalidParam side_A="-10" side_B="-13" side_C="-12"/>
+    <invalidParam side_A="100" side_B="1" side_C="2"/>
+    <invalidParam side_A="1" side_B="100" side_C="2"/>
+    <invalidParam side_A="1" side_B="2" side_C="100"/>
+    <invalidParam side_A="0" side_B="0" side_C="0"/>
+    <invalidParam side_A="0" side_B="1" side_C="2"/>
+    <invalidParam side_A="1" side_B="0" side_C="2"/>
+    <invalidParam side_A="1" side_B="2" side_C="0"/>
+</data>
