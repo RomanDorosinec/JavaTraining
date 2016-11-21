@@ -1,0 +1,25 @@
+{
+  "instructions": [
+    {
+      "instruction": "open",
+      "arg1": "https://www.epam.com/",
+      "arg2": "15"
+    },
+    {
+      "instruction": "checkLinkPresentByHref",
+      "arg1": "/solutions/core-engineering/core-technologies"
+    },
+    {
+      "instruction": "checkLinePresentByName",
+      "arg1": "Core Technologies"
+    },
+    {
+      "instruction": "checkPageTitle",
+      "arg1": "EPAM | Software Product Development Services"
+    },
+    {
+      "instruction": "checkPageContains",
+      "arg1": "ENGINEERING"
+    }
+  ]
+}

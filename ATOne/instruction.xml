@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<data>
+    <instructions instruction="open" arg1="https://www.epam.com/" arg2="15"/>
+    <instructions instruction="checkLinkPresentByHref" arg1="/solutions/core-engineering/core-technologies"/>
+    <instructions instruction="checkLinePresentByName" arg1="Core Technologies"/>
+    <instructions instruction="checkPageTitle" arg1="EPAM | Software Product Development Services"/>
+    <instructions instruction="checkPageContains" arg1="ENGINEERING"/>
+</data>
