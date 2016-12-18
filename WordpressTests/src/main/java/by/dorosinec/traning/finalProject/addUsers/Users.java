@@ -1,7 +1,8 @@
 package by.dorosinec.traning.finalProject.addUsers;
 
 /**
- *
+ * Class of Users
+ * All information about one user
  */
 public class Users {
     private String role;

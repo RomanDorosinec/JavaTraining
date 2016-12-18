@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
+ * Implementation of database Connection Manager
+ * Provides functionality to open and close a Connection
  */
 public class ConnectionManager {
     private static final String DB_HOST = "jdbc:mysql://localhost:8889/wordpress";

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
- *
+ * POM class to login in the site
  */
 public class LoginPage {
     private static final String URL = "http://localhost:8888/wp-login.php";
@@ -44,6 +44,12 @@ public class LoginPage {
         buttonLogIn.click();
     }
 
+    /**
+     * This POM method will be exposed in test case to login in the application
+     *
+     * @param userLogin    user's login
+     * @param userPassword user's password
+     */
     public void logInToSite(String userLogin, String userPassword) {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         this.setLoginUser(userLogin);
@@ -51,12 +57,17 @@ public class LoginPage {
         this.clickLogIn();
     }
 
+    /**
+     * This POM method will be exposed in test case to incorrect login in the application
+     *
+     * @param userLogin    user's login
+     * @param userPassword user's password
+     */
     public void errorLogIn(String userLogin, String userPassword) {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         this.setLoginUser(userLogin);
         this.setPassword(userPassword);
         this.clickLogIn();
         driver.findElement(errorMessage);
-        login.clear();
     }
 }

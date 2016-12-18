@@ -5,9 +5,18 @@ import by.dorosinec.traning.finalProject.addUsers.Users;
 import java.io.*;
 import java.util.ArrayList;
 
-public class ReadTxtFile {
+/**
+ * Parser of .txt file
+ * This is a file from the login password and user data
+ */
+public class ParserTxtFile {
     private static final String FILE_PATH = "login_password.txt";
 
+    /**
+     * Getting all line from a file
+     *
+     * @return list of all user with their data
+     */
     private ArrayList<String> getLineOfFile() {
         BufferedReader reader;
         ArrayList<String> allLineOfFile = new ArrayList<String>();
@@ -26,6 +35,11 @@ public class ReadTxtFile {
         return allLineOfFile;
     }
 
+    /**
+     * Parses the line from file
+     *
+     * @return object of users with all the information about him
+     */
     public ArrayList<Users> allParametersUser() {
         ArrayList<Users> users = new ArrayList<Users>();
         ArrayList<String> allLineOfFile = getLineOfFile();

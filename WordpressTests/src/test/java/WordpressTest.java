@@ -1,6 +1,6 @@
 import by.dorosinec.traning.finalProject.addUsers.Users;
-import by.dorosinec.traning.finalProject.ReadTxtFile;
-import by.dorosinec.traning.finalProject.dataBases.InformationMySQL;
+import by.dorosinec.traning.finalProject.ParserTxtFile;
+import by.dorosinec.traning.finalProject.dataBases.WorkerWithMySQL;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.DataProvider;
@@ -16,15 +16,15 @@ public class WordpressTest {
     private static final String WINDOWS_DEFAULT_CHROME_PATH = "chromedriver.exe";
 
     WebDriver driver;
-    ReadTxtFile readTxtFile = new ReadTxtFile();
+    ParserTxtFile parser = new ParserTxtFile();
     ArrayList<Users> users;
     LoginPage loginPage;
     HomePage homePage;
 
     @BeforeClass
     public void start() {
-        users = readTxtFile.allParametersUser();
-        new InformationMySQL().getInformation(users);
+        users = parser.allParametersUser();
+        new WorkerWithMySQL().addLineOfTables(users);
         System.setProperty(CHROME_PROPERTY_NAME, WINDOWS_DEFAULT_CHROME_PATH);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -55,6 +55,7 @@ public class WordpressTest {
 
     @Test(dataProvider = "Users login and password", priority = 2)
     public void loginInWordpress(String login, String pass) throws Exception {
+        driver.get("http://localhost:8888/wp-login.php");
         loginPage = new LoginPage(driver);
         loginPage.logInToSite(login, pass);
         homePage = new HomePage(driver);
@@ -75,6 +76,7 @@ public class WordpressTest {
 
     @Test(dataProvider = "Correct users login, but uncorrected password", priority = 3)
     public void correctLoginUncorrectedPassword(String login, String pass) throws Exception {
+        driver.get("http://localhost:8888/wp-login.php");
         loginPage = new LoginPage(driver);
         loginPage.errorLogIn(login, pass);
     }
@@ -93,6 +95,7 @@ public class WordpressTest {
 
     @Test(dataProvider = "Uncorrected users login, but correct password", priority = 4)
     public void uncorrectedLoginCorrectedPassword(String login, String pass) throws Exception {
+        driver.get("http://localhost:8888/wp-login.php");
         loginPage = new LoginPage(driver);
         loginPage.errorLogIn(login, pass);
     }

@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.util.concurrent.TimeUnit;
 
 /**
- *
+ * POM class to use the home page after logging in
  */
 public class HomePage {
     WebDriver driver;
@@ -24,7 +24,10 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void logOut() throws InterruptedException {
+    /**
+     * This POM method will be exposed in test case to log out site
+     */
+    public void logOut() {
         actions = new Actions(driver);
         actions.moveToElement(toolbar).perform();
         actions.moveToElement(buttonLogOut);
