@@ -4,7 +4,7 @@ cd vagrant-lamp-wordpress
 
 echo "-------------Start VM.-------------"
 
-::vagrant up
+vagrant up
 
 echo "-------------VM is up!-------------"
 
@@ -16,14 +16,8 @@ cd ..
 
 echo "-------------Executing tests!-------------"
 
-startTests
+startTests.sh
 
-cd vagrant-lamp-wordpress
-
-echo "-------------Import DB complite!-------------"
-
-vagrant ssh -c 'sudo sh /vagrant/importTable.sh /bin/bash'--wait-exit
-
-::vagrant halt
+vagrant halt
 
 PAUSE

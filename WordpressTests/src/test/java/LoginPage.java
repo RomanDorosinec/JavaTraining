@@ -22,7 +22,7 @@ public class LoginPage {
     @FindBy(id = "wp-submit")
     private WebElement buttonLogIn;
 
-    By errorMessage = By.xpath("//strong[contains(text(), \"ERROR\")]");
+    By errorMessage = By.id("login_error");
 
     public LoginPage(WebDriver driver) {
         if (!driver.getCurrentUrl().contains(URL)) {

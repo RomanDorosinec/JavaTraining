@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class WordpressTest {
+    private static final String URL = "http://localhost:8888/wp-login.php";
     private static final String CHROME_PROPERTY_NAME = "webdriver.chrome.driver";
     private static final String WINDOWS_DEFAULT_CHROME_PATH = "chromedriver.exe";
 
@@ -37,7 +38,7 @@ public class WordpressTest {
 
     @Test(priority = 1)
     public void openWebSite() {
-        driver.get("http://localhost:8888/wp-login.php");
+        driver.get(URL);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
@@ -55,7 +56,7 @@ public class WordpressTest {
 
     @Test(dataProvider = "Users login and password", priority = 2)
     public void loginInWordpress(String login, String pass) throws Exception {
-        driver.get("http://localhost:8888/wp-login.php");
+        driver.get(URL);
         loginPage = new LoginPage(driver);
         loginPage.logInToSite(login, pass);
         homePage = new HomePage(driver);
@@ -76,7 +77,7 @@ public class WordpressTest {
 
     @Test(dataProvider = "Correct users login, but uncorrected password", priority = 3)
     public void correctLoginUncorrectedPassword(String login, String pass) throws Exception {
-        driver.get("http://localhost:8888/wp-login.php");
+        driver.get(URL);
         loginPage = new LoginPage(driver);
         loginPage.errorLogIn(login, pass);
     }
@@ -95,7 +96,7 @@ public class WordpressTest {
 
     @Test(dataProvider = "Uncorrected users login, but correct password", priority = 4)
     public void uncorrectedLoginCorrectedPassword(String login, String pass) throws Exception {
-        driver.get("http://localhost:8888/wp-login.php");
+        driver.get(URL);
         loginPage = new LoginPage(driver);
         loginPage.errorLogIn(login, pass);
     }

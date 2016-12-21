@@ -23,6 +23,11 @@ public class WorkerWithMySQL {
     public void addLineOfTables(ArrayList<Users> users) {
         int countUsers = 2;
         for (Users user : users) {
+            try {
+                Class.forName("com.mysql.jdbc.driver");
+            } catch (ClassNotFoundException e) {
+                e.getMessage();
+            }
             addToUsers(user);
             addToUsermetaCapabilities(user, countUsers);
             addToUsermetaUserLevel(user, countUsers);
